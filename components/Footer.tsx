@@ -14,8 +14,8 @@ const Footer = () => {
 
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>
             {FOOTER_LINKS.map((columns) => (
-              <FooterColumn title={columns.title} className="text-emerald-50">
-                <ul className="regular-14 flex flex-col gap-4 text-emerald-50">
+              <FooterColumn title={columns.title}>
+                <ul className="regular-14 flex flex-col gap-4 text-neutral-100">
                   {columns.links.map((link) => (
                     <Link href="/" key={link}>
                       {link}
@@ -31,12 +31,12 @@ const Footer = () => {
                   <Link
                     href="/"
                     key={link.label}
-                    className="flex gap-4 md:flex-col lg:flex-row text-emerald-50"
+                    className="regular-14 flex gap-4 md:flex-col lg:flex-row text-neutral-100"
                   >
-                    <p className="whitespace-nowrap ">
+                    <p className="regular-14 whitespace-nowrap ">
                       {link.label}:
                     </p>
-                    <p className="medium-14 whitespace-nowrap text-emerald-50">
+                    <p className="regular-14 whitespace-nowrap text-neutral-100">
                       {link.value}
                     </p>
                   </Link>
@@ -58,8 +58,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border text-emerald-50" />
-        <p className="regular-14 w-full text-center text-emerald-50">2025 Mind Mingle | All rights reserved</p>
+        <div className="border text-neutral-100" />
+        <p className="regular-14 w-full text-center text-neutral-100">2025 Mind Mingle | All rights reserved</p>
       </div>
     </footer>
   )
@@ -72,8 +72,8 @@ type FooterColumnProps = {
 
 const FooterColumn = ({ title, children }: FooterColumnProps) => {
   return (
-    <div className="flex flex-col gap-5">
-      <h4 className="bold-18 whitespace-nowrap">{title}</h4>
+    <div className="text-neutral-100 flex flex-col gap-5">
+      <h4 className="text-neutral-100 bold-18 whitespace-nowrap">{title}</h4>
       {children}
     </div>
   )
