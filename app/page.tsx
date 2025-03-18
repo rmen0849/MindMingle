@@ -4,14 +4,9 @@
 // import Guide from "@/components/Guide";
 // import Hero from "@/components/Hero";
 
+
+import Login from "@/components/Login"; // 只导入 Login 组件
+
 export default function Home() {
-  return (
-    <>
-      {/* <Hero />
-      <Camp />
-      <Guide />
-      <Features />
-      <GetApp /> */}
-    </>
-  )
+  return <Login />; // 只渲染 Login 组件，不要其他组件
 }
