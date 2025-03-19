@@ -4,17 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #091146;
-}
-
+/* ✅ 仅设置 `body` 背景颜色，防止影响 `Login.tsx` */
 body {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
+  background-color: #091146; /* ✅ 仅 `body` 背景是深蓝 */
+  color: white; /* ✅ 确保全局默认是白色 */
 }
 
+/* ✅ 让 `input`、`button`、`p` 继承透明背景，防止被覆盖 */
+h1, h2, p, input, button {
+  background-color: transparent;
+}
+
+/* ✅ 让 `input` 文字颜色固定为黑色 */
+input {
+  color: black !important;
+}
+
+/* ✅ 组件专属按钮样式 */
 @layer utilities {
   .btn_white {
     @apply border-white bg-white px-8 py-3 text-green-50;
@@ -32,6 +39,7 @@ body {
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
   }
 
+  /* ✅ 全局布局相关的 flex 组件 */
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
@@ -56,7 +64,7 @@ body {
     @apply flex items-center justify-end;
   }
 
-  /* FONTS */
+  /* ✅ 字体样式 */
   .regular-64 {
     @apply text-[64px] font-[400] leading-[120%];
   }
@@ -125,33 +133,32 @@ body {
     @apply text-[16px] font-[700];
   }
 
-  /* Hero */
+  /* ✅ Hero */
   .hero-map {
     @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
   }
 
-  /* Camp */
+  /* ✅ Camp */
   .camp-quote {
     @apply absolute -right-6 bottom-4 w-[140px] lg:bottom-10 xl:-right-8 xl:w-[186px] 3xl:right-0;
   }
 
-  /* Feature */
+  /* ✅ Feature */
   .feature-phone {
     @apply absolute top-[13%] z-10 hidden max-w-[1500px] rotate-[15deg] md:-left-16 lg:flex  3xl:left-20;
   }
 
-  /* Get App */
+  /* ✅ Get App */
   .get-app {
     @apply max-container relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-green-90 bg-pattern bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-[598px] 2xl:rounded-5xl;
   }
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* ✅ 隐藏滚动条 */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
